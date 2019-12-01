@@ -1,0 +1,178 @@
+html,
+body,
+#root {
+	padding: 0;
+	margin: 0;
+	height: 100vh;
+	width: 100vw;
+	background-color: #ececec;
+}
+
+.App {
+	margin: 10px;
+	display: flex;
+	height: calc(100% - 20px);
+	width: calc(100% - 20px);
+	padding: 0;
+	background-color: #fff;
+}
+
+.sidePanel {
+	flex: 0 0 300px;
+	border-right: 10px solid #ececec;
+	display: flex;
+	flex-direction: column;
+}
+
+.sidePanelRight {
+	flex: 0 0 300px;
+	border-left: 10px solid #ececec;
+	display: flex;
+	flex-direction: column;
+}
+
+.sideHeader {
+	flex: 0 0 70px;
+	border-bottom: 10px solid #ececec;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.sideContent {
+	flex: 1;
+	overflow: overlay;
+}
+
+.sheet--head {
+	font-weight: 600;
+}
+
+.object--list {
+	padding-left: 10px;
+}
+
+.content {
+	flex: 1;
+	display: flex;
+	position: relative;
+}
+
+.object {
+	flex: 1;
+}
+
+.iframe--sheet {
+	height: 100%;
+	width: 100%;
+}
+
+.qv-object,
+.qv-object-wrapper {
+	height: calc(100% - 60px);
+	width: calc(100% - 20px);
+	margin: 50px 10px 10px;
+}
+
+.edit--share--icon {
+	position: absolute;
+	top: 15px;
+	right: 15px;
+	height: 35px;
+	width: 35px;
+	border-radius: 50%;
+	background-color: #3F51B5;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	transition: display 0.1s cubic-bezier(0.4, 0, 1, 1) 1.1s;
+	cursor: pointer;
+}
+
+.expand--icon {
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	height: 35px;
+	width: 35px;
+	border-radius: 50%;
+	background-color: #3F51B5;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #fff;
+	transition: display 0.1s cubic-bezier(0.4, 0, 1, 1) 1.1s;
+	cursor: pointer;
+}
+
+.content:hover~.edit--share--icon {
+	display: flex;
+	transition: display 0.1s cubic-bezier(0.4, 0, 1, 1) 1.1s;
+}
+
+.edit--share--icon:hover {
+	display: flex;
+	transition: display 0.1s cubic-bezier(0.4, 0, 1, 1) 1.1s;
+}
+
+div.tui-image-editor-container .tui-image-editor-main {
+	top: 0
+}
+
+#imgEditor {
+	height: 100%;
+	width: 100%;
+}
+
+.shareIcon.edit--share--icon {
+	display: flex;
+}
+
+.loginPage {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	padding: 20px;
+}
+
+.friendsList {
+	display: flex;
+	flex-direction: column;
+	border-left: 1px solid #ececec;
+}
+
+.friendsList .lui-list .lui-list__item {
+	padding-left: 20px;
+}
+
+.friendsList .lui-list .lui-list__item.active {
+	background-color: #3f51b5;
+	color: #fff;
+}
+
+.friendsList .users{
+	font-size: 15px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	border-left: 1px solid #ececec;
+    padding-bottom: 10px;
+}
+
+.loginPage .column {
+	margin: 10px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+}
+
+.loginPage .column button {
+	width: 150px;
+	align-self: center;
+}

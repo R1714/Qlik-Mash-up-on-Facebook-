@@ -1,0 +1,33 @@
+<div class="App">
+    <div class="content">
+        <div class="" id="imgEditor"></div>
+    </div>
+    <div ng-if="updatedImg" class="sidePanelRight">
+        <div ng-if="friendsList.length == 0" class="loginPage">
+                <div class="" style="font-size: 17px;font-weight: bold;">Login with facebook</div>
+            <div class="column">
+                <label class="lui-label">Email</label>
+                <input ng-model="credentials.email" class="lui-input" />
+            </div>
+            <div class="column">
+                <label class="lui-label">Password</label>
+                <input ng-model="credentials.password" class="lui-input" />
+            </div>
+            <div class="column">
+                <button class="lui-button" ng-click="loginFn()">LogIn</button>
+            </div>
+        </div>
+        <div ng-if="friendsList.length > 0" class="friendsList">
+            <div class="lui-label users">Friends</div>
+            <ul style="margin-bottom: 30px;" class="lui-list">
+                <li ng-class="{'active': user.active}" ng-repeat="user in friendsList" class="lui-list__item">
+                    <span ng-click="toggleUsers(user)" class="lui-list__text lui-list__action">{{user.fullName}}</span>
+                </li>
+            </ul>
+            <div style="padding: 0 20px;" class="">
+                <button ng-click="sendMessage()" class="lui-button">Send message</button>
+                <button class="lui-button"><a href="#dashboard" class="lui-icon lui-icon--back"></a></button>
+            </div>
+        </div>
+    </div>
+</div>

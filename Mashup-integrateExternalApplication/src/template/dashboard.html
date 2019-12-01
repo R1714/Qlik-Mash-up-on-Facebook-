@@ -1,0 +1,32 @@
+<div class="App">
+    <div class="sidePanel">
+        <div class="sideHeader">
+            <label class="lui-label">App List</label>
+            <select ng-change="chooseApp()" ng-model="selectedApp" class="lui-select lui-select--large">
+                <option disabled value="select">Choose the master</option>
+                <option ng-repeat="app in appList" value={{app.qDocId}}>{{app.qDocName}}</option>
+            </select>
+        </div>
+        <div class="sideContent">
+            <ul ng-repeat="sheet in sheetProps | orderBy:'qData.rank'" class="lui-list">
+                <li ng-click="applyObj(sheet.qInfo.qId, 'sheet')" class="lui-list__item">
+                    <span class="lui-list__text lui-list__action sheet--head">{{sheet.qMeta.title}}</span>
+                </li>
+                <ul ng-repeat="obj in sheet.obj" class="lui-list object--list">
+                    <li ng-click="applyObj(obj.name, 'obj')" class="lui-list__item">
+                        <span
+                            class="lui-list__text lui-list__action">{{obj.title.title ? obj.title.title : obj.title.subtitle ? obj.title.subtitle : obj.title.footnote ? obj.title.footnote : obj.name }}</span>
+                    </li>
+                </ul>
+            </ul>
+        </div>
+    </div>
+    <div class="content">
+        <div ng-if="objectType === 'obj'" class="object" id="custom__obj"></div>
+        <iframe ng-if="objectType === 'sheet'" frameborder="0" id="iFrameElement" class="iframe--sheet"
+            ng-src="{{sheetsrc}}" name="iframeResult"></iframe>
+        <div ng-click="toggleExpand()" class="expand--icon"><i class="lui-icon lui-icon--arrow-left"></i></div>
+    </div>
+    <div ng-click="shareSnap()" class="edit--share--icon"><a href="#imageEditor" class="lui-icon lui-icon--share"></a>
+    </div>
+</div>
